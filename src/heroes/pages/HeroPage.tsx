@@ -9,7 +9,7 @@ export const HeroPage = () => {
   if (!hero) return <Navigate to={"/marvel"} />;
   const { superhero, id, alter_ego, publisher, first_appearance, characters } =
     hero;
-  const heroImageUrl = `../src/assets/heroes/${id}.jpg`;
+  const heroImageUrl = `../assets/heroes/${id}.jpg`;
   const handleNavigateBack = () => {
     // Opcion 1
     // const currentPage = heroId?.split("-")[0];
