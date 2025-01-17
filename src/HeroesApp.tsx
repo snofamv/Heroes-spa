@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { AppRouter } from "./router/AppRouter";
+import { AuthProvider } from "./auth";
 
 export const HeroesApp = (): JSX.Element => {
   useEffect(() => {
@@ -8,7 +9,9 @@ export const HeroesApp = (): JSX.Element => {
 
   return (
     <>
-      <AppRouter></AppRouter>
+      <AuthProvider>
+        <AppRouter />
+      </AuthProvider>
     </>
   );
 };

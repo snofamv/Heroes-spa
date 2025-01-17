@@ -7,7 +7,7 @@ export const HeroesRoutes = (): JSX.Element => {
   return (
     <>
       <Navbar />
-      <div className="container" style={{}}>
+      <div className="container">
         <Routes>
           {/* <Route path={`/`} element={<MarvelPage />} /> */}
           <Route path="/" element={<Navigate to={"/marvel"} />} />
@@ -15,8 +15,6 @@ export const HeroesRoutes = (): JSX.Element => {
           <Route path={`/dc`} element={<DcPage />} />
           <Route path={`/search`} element={<SearchPage />} />
           <Route path={`/hero/:heroId`} element={<HeroPage />} />
-
-          {/* search hero by id */}
         </Routes>
       </div>
     </>
