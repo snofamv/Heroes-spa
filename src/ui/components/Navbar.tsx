@@ -4,7 +4,7 @@ export const Navbar = () => {
   const navigate = useNavigate();
   const handleLogout = () => {
     console.log("Logout");
-    navigate(`/${URL_BASE}/login`, {
+    navigate(`/login`, {
       replace: true,
     });
   };
@@ -16,14 +16,14 @@ export const Navbar = () => {
 
       <div className="navbar-collapse">
         <div className="navbar-nav">
-          <NavLink className="nav-item nav-link" to={`/${URL_BASE}/marvel`}>
+          <NavLink className="nav-item nav-link" to={`/marvel`}>
             Marvel
           </NavLink>
 
-          <NavLink className="nav-item nav-link" to={`/${URL_BASE}/dc`}>
+          <NavLink className="nav-item nav-link" to={`/dc`}>
             DC
           </NavLink>
-          <NavLink className="nav-item nav-link" to={`/${URL_BASE}/search`}>
+          <NavLink className="nav-item nav-link" to={`/search`}>
             Search
           </NavLink>
         </div>
