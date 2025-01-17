@@ -1,10 +1,10 @@
 import { Link, NavLink, useNavigate } from "react-router";
-
+const URL_BASE = "Heroes-spa";
 export const Navbar = () => {
   const navigate = useNavigate();
   const handleLogout = () => {
     console.log("Logout");
-    navigate("/login", {
+    navigate(`/${URL_BASE}/login`, {
       replace: true,
     });
   };
@@ -16,14 +16,14 @@ export const Navbar = () => {
 
       <div className="navbar-collapse">
         <div className="navbar-nav">
-          <NavLink className="nav-item nav-link" to="/marvel">
+          <NavLink className="nav-item nav-link" to={`/${URL_BASE}/marvel`}>
             Marvel
           </NavLink>
 
-          <NavLink className="nav-item nav-link" to="/dc">
+          <NavLink className="nav-item nav-link" to={`/${URL_BASE}/dc`}>
             DC
           </NavLink>
-          <NavLink className="nav-item nav-link" to="/search">
+          <NavLink className="nav-item nav-link" to={`/${URL_BASE}/search`}>
             Search
           </NavLink>
         </div>

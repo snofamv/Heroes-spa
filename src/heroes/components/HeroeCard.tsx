@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { Hero } from "../interfaces";
+import { URL_BASE } from "../../router/AppRouter";
 const CharactersByHero = ({
   alter_ego,
   characters,
@@ -32,7 +33,7 @@ export const HeroeCard = (hero: Hero) => {
                 <small className="text-muted">{first_appearance}</small>
               </p>
 
-              <Link to={`/hero/${id}`}>Más..</Link>
+              <Link to={`/${URL_BASE}/marvel/hero/${id}`}>Más..</Link>
             </div>
           </div>
         </div>
