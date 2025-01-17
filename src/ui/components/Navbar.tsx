@@ -1,5 +1,4 @@
 import { Link, NavLink, useNavigate } from "react-router";
-const URL_BASE = "Heroes-spa";
 export const Navbar = () => {
   const navigate = useNavigate();
   const handleLogout = () => {
