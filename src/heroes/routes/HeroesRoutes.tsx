@@ -7,7 +7,7 @@ export const HeroesRoutes = (): JSX.Element => {
   return (
     <>
       <Navbar />
-      <div className="container">
+      <div className="container" style={{}}>
         <Routes>
           {/* <Route path={`/`} element={<MarvelPage />} /> */}
           <Route path="/" element={<Navigate to={"/marvel"} />} />

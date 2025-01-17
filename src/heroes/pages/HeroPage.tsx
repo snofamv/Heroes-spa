@@ -9,7 +9,6 @@ export const HeroPage = () => {
   if (!hero) return <Navigate to={"/marvel"} />;
   const { superhero, id, alter_ego, publisher, first_appearance, characters } =
     hero;
-  const heroImageUrl = `assets/heroes/${id}.jpg`;
   const handleNavigateBack = () => {
     // Opcion 1
     // const currentPage = heroId?.split("-")[0];
@@ -25,7 +24,7 @@ export const HeroPage = () => {
       <div className="row mt-5">
         <div className="col-4 animate__animated animate__fadeInLeft">
           <img
-            src={heroImageUrl}
+            src={`/assets/heroes/${id}.jpg`}
             alt={`heroDescription-${superhero}`}
             className="img-thumbnail"
           />

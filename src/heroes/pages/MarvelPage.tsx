@@ -3,7 +3,7 @@ import { Publisher } from "../interfaces";
 
 export const MarvelPage = (): JSX.Element => {
   return (
-    <main>
+    <main className="">
       <h1>Marvel Heroes</h1>
       <hr />
       <HeroList publisher={Publisher.MarvelComics}></HeroList>
