@@ -3,7 +3,7 @@ import { Hero } from "../interfaces";
 import { HeroeCard } from "../components";
 import { useForm } from "../hooks/useForm";
 import { useLocation, useNavigate } from "react-router";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import queryString from "query-string";
 const initialFormData: object = {
   searchText: "",
@@ -31,6 +31,8 @@ export const SearchPage = (): JSX.Element => {
   const showSearch: boolean =
     heroes.length === 0 && queryParam === "" ? true : false;
   const showError: boolean = heroes.length === 0 && queryParam.length > 0;
+  const [hoveredHero, setHoveredHero] = useState<string | null>(null);
+
   return (
     <>
       <h1>Search</h1>
@@ -66,8 +68,33 @@ export const SearchPage = (): JSX.Element => {
               No results about: <b>{queryParam}</b>
             </p>
           </div>
-          <div className="col">
-            {heroes && heroes.map((hero: Hero) => <HeroeCard {...hero} />)}
+          <div className={`col`}>
+            {heroes &&
+              heroes.map((hero: Hero) => (
+                <div
+                  key={hero.id}
+                  onMouseEnter={() => setHoveredHero(hero.id)}
+                  onMouseLeave={() => setHoveredHero(null)}
+                  style={{
+                    border: "1px solid lightgray",
+                    margin: "10px",
+                    padding: "10px",
+                    textAlign: "center",
+                    borderRadius: "8px",
+
+                    transform:
+                      hoveredHero === hero.id ? "scale(1.05)" : "scale(1)",
+                    boxShadow:
+                      hoveredHero === hero.id
+                        ? "0px 4px 8px rgba(0, 0, 0, 0.2)" // Sombra suave
+                        : "none", // Sin sombra
+                    transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                    cursor: "pointer",
+                  }}
+                >
+                  <HeroeCard key={hero.id} {...hero} />
+                </div>
+              ))}
           </div>
         </div>
       </div>
